@@ -4,7 +4,7 @@ export default {
   content: [
     './public/**/*.astro',
     './src/**/*.{astro,js,ts}',
-    'node_modules/preline/dist/*.js',
+    './node_modules/preline/preline.js',
   ],
   darkMode: 'class',
   theme: {
@@ -16,5 +16,9 @@ export default {
       },
     },
   },
-  plugins: [preline],
+  plugins: [
+    require('@tailwindcss/forms'), 
+    require('preline/plugin'),
+    preline
+  ],
 };
